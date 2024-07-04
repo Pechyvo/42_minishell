@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asmolnya <asmolnya@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anonymous <anonymous@example.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/15 16:06:47 by anonymous         #+#    #+#             */
-/*   Updated: 2024/07/03 21:43:10 by asmolnya         ###   ########.fr       */
+/*   Created: 2026/07/26 00:00:00 by anonymous         #+#    #+#             */
+/*   Updated: 2026/07/26 00:00:00 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,7 @@
 
 typedef struct s_cmd
 {
-	// char			*cmd;	// The command name, e.g., "ls"
-	// char			**args;	// An array of arguments, e.g., ["ls", "-l", NULL]
-	char			*cmd;	// An array of command arguments, e.g., ["ls", "-l", NULL]
+	char			**cmd;	// An array of command arguments, e.g., ["ls", "-l", NULL]
 	char			*in_rd;	// Input redirection file, e.g., "input.txt"
 	char			*out_rd;// Output redirection file, e.g., "output.txt"
 	int				append;	// Flag for append mode (1 for >>, 0 for >)
