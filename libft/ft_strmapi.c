@@ -30,7 +30,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 
 	i = 0;
-	str = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	str = (char *)ft_malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (str == NULL || s == NULL)
 		return (NULL);
 	while (s[i])
