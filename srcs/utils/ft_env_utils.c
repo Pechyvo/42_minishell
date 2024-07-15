@@ -12,44 +12,16 @@
 
 #include "../../incl/minishell.h"
 
-void	ft_free_array(char **array)
+t_env	*ft_find_env(t_env *env, char *var)
 {
-	int	i;
+	size_t	len;
 
-	i = 0;
-	while (array[i])
+	len = ft_strlen(var);
+	while (env)
 	{
-		ft_free(array[i]);
-		i++;
+		if (len == ft_strlen(env->var) && !ft_strncmp(var, env->var, len))
+			return (env);
+		env = env->next;
 	}
-	ft_free(array);
-}
-
-char	*ft_find_path(char *cmd, char *path)
-{
-	char	**paths;
-	char	*tmp;
-	char	*res;
-	int		fd;
-	int		i;
-
-	i = 0;
-	paths = ft_split(path + 5, ':');
-	while (paths[i] != NULL)
-	{
-		tmp = ft_strjoin(paths[i], "/");
-		res = ft_strjoin(tmp, cmd);
-		ft_free(tmp);
-		fd = open(res, O_RDONLY);
-		if (fd != -1)
-		{
-			close(fd);
-			ft_free_array(paths);
-			return (res);
-		}
-		ft_free(res);
-		i++;
-	}
-	ft_free_array(paths);
 	return (NULL);
 }
