@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_symb_utils.c                                    :+:      :+:    :+:   */
+/*   ft_str_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anonymous <anonymous@example.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,24 +12,20 @@
 
 #include "../../incl/minishell.h"
 
-int ft_space(char c)
+int	ft_is_empty(char *str)
 {
-	return (c == ' ' || c == '\t');
+	if (!str)
+		return (1);
+	while (*str)
+	{
+		if (*str != ' ' || *str != '\t')
+			return (0);
+		str++;
+	}
+	return (1);
 }
 
-int ft_quote(char c)
+int	ft_is_quote(char c)
 {
-	if (c == '\"')
-		return ('\"');
-	if (c == '\'')
-		return ('\'');
-	return (0);
-}
-
-void	ft_quote_type(char c, char *q)
-{
-	if ((ft_quote(c)) && !*q)
-		*q = c;
-	else if ((ft_quote(c)) && *q == c)
-		*q = '\0';
+	return (c == '\'' || c == '"');
 }

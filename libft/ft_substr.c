@@ -66,6 +66,34 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (str);
 }
 
+char	*ft_substr_rem(char *str, char *sub)
+{
+	char	*res;
+	char	*found;
+	int		sub_len;
+	int		str_len;
+	int		i;
+
+	res = NULL;
+	found = ft_strstr(str, sub);
+	if (!str || !sub)
+		return (NULL);
+	if (found)
+	{
+		sub_len = ft_strlen(sub);
+		str_len = ft_strlen(str) - sub_len;
+		res = ft_malloc((str_len + 1) * sizeof(char));
+		if (res)
+		{
+			i = found - str;
+			ft_strncpy(res, str, i);
+			ft_strncpy(res + i, found + sub_len, str_len - i);
+			res[str_len] = '\0';
+		}
+	}
+	return (res);
+}
+
 // #include <stdio.h>
 // #include <stdlib.h>
 // #include <string.h>
