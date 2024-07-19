@@ -61,7 +61,7 @@ static char	*ft_prompt_exit_code(t_mhell *mhell, char *input)
 {
 	char	*prompt;
 	char	*tmp;
-	char 	*code;
+	char	*code;
 
 	prompt = ft_strjoin(YELLOW"Minishell:"WHITE, input);
 	if (mhell->exit_code == 0)

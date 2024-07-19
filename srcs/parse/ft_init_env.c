@@ -28,7 +28,7 @@ void	ft_init_env(t_mhell *mhell, char **envp)
 		if (ft_fill(&mhell->env, env[i]))
 		{
 			ft_envclean(&mhell->env);
-			printf(ERR ERR_ALLOC);
+			printf(ER ER_ALLOC);
 			exit(EXIT_FAILURE);
 		}
 		i++;
