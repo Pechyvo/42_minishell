@@ -39,20 +39,21 @@ bool	ft_is_quote(char c)
 	return (c == '\'' || c == '"');
 }
 
-void	ft_quote_state(int c, int *state)
+int	ft_is_spec(char *str)
 {
-	if (c == '\'')
+	if (*str == '|')
+		return (1);
+	else if (*str == '<')
 	{
-		if (*state == 1)
-			*state = 0;
-		else if (*state == 0)
-			*state = 1;
+		if (*(str + 1) && ((*(str + 1) == '<') || *(str + 1) == '>'))
+			return (2);
+		return (1);
 	}
-	if (c == '\"')
+	else if (*str == '>')
 	{
-		if (*state == 2)
-			*state = 0;
-		else if (*state == 0)
-			*state = 2;
+		if (*(str + 1) && *(str + 1) == '>')
+			return (2);
+		return (1);
 	}
+	return (0);
 }

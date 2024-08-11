@@ -12,19 +12,6 @@
 
 #include "../../incl/minishell.h"
 
-void	ft_free_array(char **array)
-{
-	int	i;
-
-	i = 0;
-	while (array[i])
-	{
-		ft_free(array[i]);
-		i++;
-	}
-	ft_free(array);
-}
-
 char	*ft_find_path(char *cmd, char *path)
 {
 	char	**paths;

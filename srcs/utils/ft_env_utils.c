@@ -60,3 +60,17 @@ void	ft_envclean(t_env **env)
 		*env = tmp;
 	}
 }
+
+char	*ft_envcut(char *str)
+{
+	char	*name;
+	int		i;
+
+	i = 0;
+	while (str[i] && (ft_isalnum(str[i]) || str[i] == '_'))
+		i++;
+	name = ft_substr(str, 0, i);
+	if (!name)
+		exit(printf(ER ER_ALLOC));
+	return (name);
+}

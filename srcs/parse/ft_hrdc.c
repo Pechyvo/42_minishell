@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_cmd_parse.c                                     :+:      :+:    :+:   */
+/*   ft_hrdc.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anonymous <anonymous@example.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,16 +12,28 @@
 
 #include "../../incl/minishell.h"
 
-bool	ft_input_parse(t_mhell *mhell, char *input)
+int	ft_hrdc(t_mhell *mhell, int order)
 {
-	char	*cmd_line;
+	int	hrdc;
+	int	in;
+	int	i;
 
-	(void)mhell;
-	while (*input)
+	i = 0;
+	hrdc = 0;
+	while (i++ < order)
 	{
-		ft_skip_spaces(&input);
-		cmd_line = input;
-		// ft_find_next_cmd(cmd, &input, &cmd_line);
+		if (mhell->tkn_l > 1 && mhell->tkn[i].type == hrdc && (i + 1) < mhell->cmd && mhell->tkn[i + 1].type == text)
+			hrdc++;
 	}
-	return (true);
+	if (!hrdc)
+		return (0);
+	ft_alloc_cmd();
+	i = 0;
+	in = 0;
+	while (i++ < order)
+	{
+		if (mhell->tkn[i].type == hrdc)
+			ft_fill_hrdc();
+	}
+	return (hrdc);
 }

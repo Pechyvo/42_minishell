@@ -60,7 +60,7 @@ static bool	ft_redirects(const char *str)
 
 	i = -1;
 	state = 0;
-	while(str[++i])
+	while (str[++i])
 	{
 		ft_quote_state(str[i], &state);
 		if (state == 0 && str[i] == '<' && !ft_rdin(str))
