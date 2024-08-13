@@ -27,13 +27,15 @@ int	ft_hrdc(t_mhell *mhell, int order)
 	}
 	if (!hrdc)
 		return (0);
-	ft_alloc_cmd();
+	// mhell->cmd = ft_malloc(sizeof(t_cmd) * 1);
+	// mhell->cmd = 1;
+	ft_alloc_cmd(mhell->cmd);
 	i = 0;
 	in = 0;
 	while (i++ < order)
 	{
 		if (mhell->tkn[i].type == hrdc)
-			ft_fill_hrdc();
+			ft_fill_redir(&mhell->cmd);
 	}
 	return (hrdc);
 }
