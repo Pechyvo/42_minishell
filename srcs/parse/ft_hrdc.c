@@ -22,7 +22,7 @@ int	ft_hrdc(t_mhell *mhell, int order)
 	hrdc = 0;
 	while (i++ < order)
 	{
-		if (mhell->tkn_l > 1 && mhell->tkn[i].type == hrdc && (i + 1) < mhell->cmd && mhell->tkn[i + 1].type == text)
+		if (mhell->tkn_l > 1 && mhell->tkn[i].type == hrdc && (i + 1) < mhell->cmd && mhell->tkn[i + 1].type == _text)
 			hrdc++;
 	}
 	if (!hrdc)
