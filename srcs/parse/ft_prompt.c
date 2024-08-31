@@ -12,26 +12,26 @@
 
 #include "../../incl/minishell.h"
 
-static char	*ft_get_prompt(t_mhell *mhell);
+// static char	*ft_get_prompt(t_mhell *mhell);
 static char	*ft_prompt_exit_code(t_mhell *mhell, char *prompt);
 
-char	*ft_input_prompt(t_mhell *mhell)
-{
-	char	*input;
+// char	*ft_input_prompt(t_mhell *mhell)
+// {
+// 	char	*input;
 
-	input = readline(ft_get_prompt(mhell));
-	if (!input)
-	{
-		ft_free(input);
-		printf("exit\n");
-		exit(EXIT_SUCCESS);
-	}
-	if (input && *input)
-		add_history(input);
-	return (input);
-}
+// 	input = readline(ft_get_prompt(mhell));
+// 	if (!input)
+// 	{
+// 		ft_free(input);
+// 		printf("exit\n");
+// 		exit(EXIT_SUCCESS);
+// 	}
+// 	if (input && *input)
+// 		add_history(input);
+// 	return (input);
+// }
 
-static char	*ft_get_prompt(t_mhell *mhell)
+char	*ft_get_prompt(t_mhell *mhell)
 {
 	static char	*prompt;
 	t_env		*user;
