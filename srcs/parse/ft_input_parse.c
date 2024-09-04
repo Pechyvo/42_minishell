@@ -29,15 +29,10 @@ bool	ft_input_parse(t_mhell *mhell)
 	if (!*input)
 		return (mhell->exit_code = 0, ft_free(input), false);
 	ft_tokenize(mhell, input);
-	// order = ft_token_order(mhell);
-	// if (order >= 0)
-	// {
-	// 	if (ft_hrdc(mhell, order))
-	// 		return (false);
-	// }
+	if (!ft_handle_heredocs(mhell))
+		return (false);
 	ft_open_quotes(mhell);
-	// if (order < 0)
-		ft_create_cmd(mhell);
+	ft_create_cmd(mhell);
 	mhell->exit_code = 0;
 	return (ft_free(input), true);
 }

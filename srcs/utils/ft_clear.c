@@ -42,4 +42,3 @@ static void	ft_clear_tkn(t_tkn **tkn, int *len)
 	*tkn = NULL;
 	*len = 0;
 }
-

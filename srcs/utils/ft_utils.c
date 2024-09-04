@@ -49,3 +49,17 @@ int	ft_strchr_pos(char *s, int c)
 		return (++i);
 	return (-1);
 }
+
+void	ft_get_exit_code(int *exit_code, int stat_loc, bool first_encounter)
+{
+	if (WIFEXITED(stat_loc))
+	{
+		if (first_encounter && WEXITSTATUS(stat_loc))
+			*exit_code = WEXITSTATUS(stat_loc);
+	}
+	else if (WIFSIGNALED(stat_loc))
+	{
+		if (first_encounter)
+			*exit_code = WTERMSIG(stat_loc) + 128;
+	}
+}
