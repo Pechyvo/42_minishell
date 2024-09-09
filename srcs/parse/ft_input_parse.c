@@ -29,10 +29,10 @@ bool	ft_input_parse(t_mhell *mhell)
 	if (!*input)
 		return (mhell->exit_code = 0, ft_free(input), false);
 	ft_tokenize(mhell, input);
-	if (!ft_handle_heredocs(mhell))
-		return (false);
 	ft_open_quotes(mhell);
 	ft_create_cmd(mhell);
+	if (!ft_handle_heredocs(mhell))
+		return (false);
 	mhell->exit_code = 0;
 	return (ft_free(input), true);
 }

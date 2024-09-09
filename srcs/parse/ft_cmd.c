@@ -80,6 +80,7 @@ void	ft_fill_cmd(t_mhell *mhell, int *i, t_cmd *cmd)
 				allocs->heredoc = 1;
 			(*i)++;
 			allocs->in_rd = ft_strdup(mhell->tkn[*i].token);
+			ft_handle_heredocs(mhell);
 		}
 		else if (mhell->tkn[*i].type == _rdout || mhell->tkn[*i].type == _append)
 		{
