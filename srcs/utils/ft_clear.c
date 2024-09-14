@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include  "../../incl/minishell.h"
+#include "../../incl/minishell.h"
 
 static void	ft_clear_tkn(t_tkn **tkn, int *len);
 
@@ -23,8 +23,6 @@ void	ft_free_mhell_data(t_mhell *mhell)
 		ft_cmdclear(&mhell->cmd, ft_free);
 		mhell->cmd_l = 0;
 	}
-	// printf("Cleared\n");
-	// ft_print_cmd(mhell->cmd);
 }
 
 static void	ft_clear_tkn(t_tkn **tkn, int *len)
@@ -34,7 +32,7 @@ static void	ft_clear_tkn(t_tkn **tkn, int *len)
 	i = 0;
 	while (i < *len && (*tkn)[i].token)
 	{
-		ft_free((*tkn)[i].token);	
+		ft_free((*tkn)[i].token);
 		i++;
 	}
 	if (*len)

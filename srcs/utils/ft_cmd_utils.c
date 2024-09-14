@@ -63,4 +63,3 @@ void	ft_cmddelone(t_cmd *lst, void (*del)(void*))
 	del(lst->out_rd);
 	ft_free(lst);
 }
-

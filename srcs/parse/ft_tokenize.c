@@ -76,7 +76,8 @@ static int	ft_strskip(char *str)
 		if (state != 0)
 		{
 			i++;
-			while (str[i] && ((state == 1 && str[i] != '\'') || (state == 2 && str[i] != '"')))
+			while (str[i] && ((state == 1 && str[i] != '\'') || \
+			(state == 2 && str[i] != '"')))
 				i++;
 			ft_quote_state(str[i], &state);
 		}
