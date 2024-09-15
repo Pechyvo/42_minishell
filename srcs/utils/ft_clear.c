@@ -23,6 +23,7 @@ void	ft_free_mhell(t_mhell *mhell)
 		ft_cmdclear(&mhell->cmd, ft_free);
 		mhell->cmd_l = 0;
 	}
+	free(mhell->cmd_line);
 }
 
 static void	ft_clear_tkn(t_tkn **tkn, int *len)
