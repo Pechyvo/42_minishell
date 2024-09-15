@@ -66,7 +66,6 @@ void	ft_create_cmd(t_mhell *mhell)
 		ft_fill_cmd(mhell, &i, cmd);
 		i++;
 	}
-	/* ft_print_cmd(mhell->cmd); */
 }
 
 void	ft_fill_cmd(t_mhell *mhell, int *i, t_cmd *cmd)
