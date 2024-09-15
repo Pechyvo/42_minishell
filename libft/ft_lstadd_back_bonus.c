@@ -22,7 +22,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 			*lst = new;
 		else
 		{
-			tmp = ft_lstlast(*lst);
+			tmp = ft_lstlast_libft(*lst);
 			tmp->next = new;
 		}
 	}
