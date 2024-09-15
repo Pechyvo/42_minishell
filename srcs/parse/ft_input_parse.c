@@ -117,6 +117,8 @@ static bool	ft_check_tokens(t_mhell *mhell)
 			return (printf(ER_MHELL ER_SX_STR, "newline"), false);
 		else if (tkn[i].type > _pipe && mhell->tkn[i + 1].type > 1)
 			return (printf(ER_MHELL ER_SX_STR, tkn[i + 1].token), false);
+		else if (tkn[i].type == _pipe && tkn[i + 1].type == _pipe)
+			return (printf(ER_MHELL ER_SX_STR, tkn[i + 1].token), false);
 		i++;
 	}
 	return (true);
