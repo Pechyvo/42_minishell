@@ -16,13 +16,14 @@ static bool	ft_check_pipe(char *input);
 static bool	ft_unclosed_quotes(char *str);
 static bool	ft_invalid_chars(char *str);
 static bool	ft_pipe_nb(char *str);
+bool		ft_redir(char *input);
 
 bool	ft_input_error(t_mhell *mhell, char	*input)
 {
 	if (!input || ft_is_empty(input))
 		return (false);
 	if (!ft_check_pipe(input) || !ft_unclosed_quotes(input)
-		|| !ft_invalid_chars(input) || !ft_pipe_nb(input))
+		|| !ft_invalid_chars(input) || !ft_pipe_nb(input) || !ft_redir(input))
 		return (mhell->exit_code = 2, false);
 	return (true);
 }
