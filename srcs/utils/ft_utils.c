@@ -49,3 +49,17 @@ int	ft_strchr_pos(char *s, int c)
 		return (++i);
 	return (-1);
 }
+
+int	ft_isdigit_loop(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (!ft_isdigit(str[i]))
+			return (0);
+		i++;
+	}
+	return (1);
+}
