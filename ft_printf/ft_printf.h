@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anonymous <anonymous@example.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,37 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
+# include "../libft/libft.h"
+# include <stdarg.h>
 
-void	*ft_memset(void *b, int c, size_t len)
-{
-	size_t			i;
-	unsigned char	*ptr;
+int		ft_printf(const char *input, ...);
 
-	i = 0;
-	ptr = (unsigned char *)b;
-	while (i < len)
-	{
-		ptr[i] = (unsigned char)c;
-		i++;
-	}
-	return (b);
-}
-
-// #include <stdio.h>
-// #include <string.h>
-// int main() {
-//     char buffer[10];
-//     char buffer_std[10];
-
-//     // Using your custom ft_memset function
-//     ft_memset(buffer, 'A', 5);
-
-//     // Using the standard library's memset function
-//     memset(buffer_std, 'A', 5);
-
-//     printf("Custom ft_memset: %s\n", buffer);
-//     printf("Standard memset: %s\n", buffer_std);
-
-//     return 0;
-// }
+#endif

@@ -100,24 +100,3 @@ int	ft_printf(const char *input, ...)
 	va_end(list);
 	return (count);
 }
-
-// #include <stdio.h>
-
-// int main(void) 
-// {
-//     // Testing with integers
-//     int num = 42;
-
-//     printf("Standard printf: %d\n", num);
-//     ft_printf("Custom ft_printf: %d\n", num);
-
-//     // Testing with strings
-//     const char *str = "Hello, world!";
-
-//     printf("Standard printf: %s\n", str);
-//     ft_printf("Custom ft_printf: %s\n", str);
-
-//     // Add more test cases as needed
-
-//     return (0);
-// }

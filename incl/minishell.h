@@ -15,8 +15,7 @@
 
 # include "../ft_destructor/ft_alloc.h"
 # include "../libft/libft.h"
-# include "../42_pipex/incl/pipex.h"
-# include "../42_pipex/ft_printf/ft_printf.h"
+# include "../ft_printf/ft_printf.h"
 # include <readline/readline.h>
 # include <readline/history.h>
 # include <sys/types.h>
@@ -166,14 +165,6 @@ int		count_commands(t_cmd *cmd);
 int		fork_and_execute(t_cmd *it, int *pipefd, int i, int num_cmds);
 int		wait_for_children(int num_cmds);
 
-// PIPEX
-void	ft_validate_cmd(char **argv);
-void	ft_validate_file(char **argv);
-void	ft_error_output(char *path, char *msg, int code);
-void	ft_free_array(char **array);
-char	*ft_find_path(char *cmd, char *path);
-char	**ft_separate(char *a, char d);
-
 // UTILITY
 bool	ft_input_error(t_mhell *mhell, char	*input);
 void	ft_open_quotes(t_mhell *mhell);
@@ -206,5 +197,6 @@ int		ft_is_spec(char *str);
 int		ft_isdigit_loop(char *str);
 
 void	ft_print_cmd(t_cmd *cmd);
+char	*ft_find_path(char *cmd, char *path);
 
 #endif

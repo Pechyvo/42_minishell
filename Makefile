@@ -11,7 +11,7 @@ PARSEDIR		= ${SRCSDIR}parse/
 UTILDIR			= ${SRCSDIR}utils/
 # UTILSRCS		= ${UTILDIR}ft_utils.c ft_env_utils.c
 
-PRINTFDIR			= 42_pipex/ft_printf/
+PRINTFDIR			= ft_printf/
 
 SRCSDIR			= srcs/
 SRCS			= ${SRCSDIR}main.c \
@@ -61,7 +61,7 @@ CC 				= cc
 all: $(NAME)
 
 $(NAME): $(OBJS) $(LIBFT) $(ALLOC)
-	$(CC) $(CFLAGS) $(SRCS) $(LIBFT) $(ALLOC) -o $(NAME) -lreadline -g
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(ALLOC) -o $(NAME) -lreadline -g
 
 $(LIBFT):
 	make -C $(LIBFTDIR)
@@ -79,7 +79,7 @@ fclean: clean
 	rm -f $(NAME)
 
 test:
-	gcc srcs/exec/*.c srcs/utils/ft_arr_utils.c libft/*.c 42_pipex/ft_printf/*.c ft_destructor/*.c -lreadline -g -o executor
+	gcc srcs/exec/*.c srcs/utils/ft_arr_utils.c libft/*.c ft_printf/*.c ft_destructor/*.c -lreadline -g -o executor
 
 runb: all
 	valgrind --leak-check=full ./minishell

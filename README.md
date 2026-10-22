@@ -116,8 +116,8 @@ The implementation is divided into three main stages:
 │   ├── utils/               # environment, errors, strings, and cleanup
 │   └── main.c               # prompt loop and signal setup
 ├── libft/                   # bundled Libft
+├── ft_printf/               # minimal formatted-output helper
 ├── ft_destructor/           # allocation-tracking support library
-├── 42_pipex/                # bundled support code and ft_printf
 ├── subject/
 │   └── en.subject_minishell.pdf
 └── Makefile
